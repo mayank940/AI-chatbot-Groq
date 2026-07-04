@@ -2,6 +2,7 @@ from client import generate_output, analyze_image
 from flask import Flask, render_template, request, jsonify, url_for
 import base64
 import requests
+import os
 
 app = Flask(__name__)
 
@@ -41,4 +42,7 @@ def image_processor():
     return jsonify({"response" : response}), 200
 
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(
+        host = "0.0.0.0",
+        port = int(os.environ.get("PORT", 5000)),
+        debug = True)
