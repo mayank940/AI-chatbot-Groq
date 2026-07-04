@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1>AI Chatbot</h1>
+    <div class="container">
+        <h2>Ask any question!</h2>
+        <form action="" id = "queryForm">
+            <div class="inputsDiv">
+                <input type="text" name="query" class="textInput" id="textQuery" placeholder="Ask anything..." required>
+                <div id="docPreview"><i class=" fa-solid fa-circle-check" id="previewIcon"></i>No file selected</div>
+                    <button id="attachmentsBtn"><i class="fa-solid fa-circle-plus" id="attachmentIcon"></i></button>
+            </div>
+            <div class="attachmentsDiv">
+                <div class="documentsInput">
+                    <input type="file" name="image_file" id="imageFile" accept="image/" enctype="multipart/form-data" hidden>
+                    <i class="fa-duotone fa-regular fa-file-lines " id="displayIcon"></i>
+                    <p>Document</p>
+                </div>
+                <div class="imageUrlInput">
+                    <i class="fa-solid fa-link " id="displayIcon"></i>
+                    <p>URL</p>
+                </div>
+            </div>
+            <input type="text" name="image_url" class="textInput" id="imageUrl" placeholder="Enter image url here...">
+            <button type="submit" id="submitButton">Get Answer</button>
+        </form>
+        <h3 id="outputHeader">Answer :</h3>
+        <p id="outputText"></p>
+    </div>
+    
+    <script src = "{{ url_for('static', filename = 'script.js') }}" ></script>
+</body>
+</html>
