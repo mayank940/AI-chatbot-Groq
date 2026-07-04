@@ -63,7 +63,7 @@ def analyze_image(image_content , query):
             }
         ],
         temperature = 0.7,
-        max_completion_tokens = 1024,
+        max_completion_tokens = 2048,
         model = "Qwen/Qwen3.6-27B"
     )
 
